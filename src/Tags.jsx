@@ -1,12 +1,14 @@
+import Tag from "./Tag";
+
 function Tags(props) {
 
+
     return (
-        <div className="w-1/2 mx-auto flex flex-col justify-center">
+        <div className="w-2/3 mx-auto flex flex-col justify-center">
             {props.info?.map((tag, i) => {
                 return (
-                    <div className="flex justify-between border my-2 p-2  rounded-lg">
-                        <p key={i} className="text-2xl">{tag}</p>
-                        <button className="border w-8 rounded-full">X</button>
+                    <div key={i} className="flex justify-between bg-slate-50 my-2 p-2  rounded-lg">
+                        <Tag info={tag} indice={i} deleteTag={props.deleteTag}/>
                     </div>
                     )
             })}
